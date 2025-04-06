@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Ensure the font is linked in your HTML file instead of here */
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 80px;
+    object-fit: contain;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poiret One', cursive;
+}
+h1 {
+    font-size: 64px; /* Extra Large */
+}
+
+h2 {
+    font-size: 48px; /* Large */
+}
+
+h3 {
+    font-size: 36px; /* Medium */
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+
+
+
+.logo {
+    font-size: 4px;
+    font-weight: bold;
+   
+}
+
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: #6cc2a6; /* Change this to your preferred hover color */
+}
+
+
+
+/* Hero Section */
+.hero {
+    text-align: left;
+    padding: 60px 50px;
+    background: #f8f8f8;
+    border-radius: 40px 40px 0 0;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Primary Button - Contact Us */
+.btn.primary {
+    background: #c1db00;
+    color: black;
+}
+
+/* Hover effect for Primary Button */
+.btn.primary:hover {
+    background: #a5bf00; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+/* Secondary Button - Got Any Questions? */
+.btn.secondary {
+    background: #6cc2a6;
+    color: white;
+}
+
+/* Hover effect for Secondary Button */
+.btn.secondary:hover {
+    background: #5aa892; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+
+/* Carousel */
+.carousel {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-box {
+    flex: 0 0 auto;
+    width: 220px; /* or whatever size you want */
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.carousel-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* this is key */
+    display: block;
+}
+.carousel-box {
+    width: 30vw;
+    height: 20vw;
+}
+
+
+#about-us {
+    background: url('design.png') no-repeat center center/cover, #6cc2a6;
+    padding: 100px 10%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: left;
+    text-align: left;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.connected-hospitals {
+    padding: 80px 20px; /* Increased padding */
+    text-align: center;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.connected-hospitals h2 {
+    font-size: 3rem; /* Bigger heading */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.connected-hospitals p {
+    font-size: 1.5rem; /* Bigger paragraph */
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.connected-hospitals ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 30px auto;
+}
+.connected-hospitals { margin-left: 0%; }
+
+
+.connected-hospitals li {
+    font-size: 1.5rem; /* Bigger text */
+    margin: 20px 0;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #d35400; /* Eye-catching color */
+}
+
+.check-button {
+    display: inline-block;
+    font-size: 1.6rem; /* Bigger button text */
+    padding: 15px 30px;
+    background-color: #6cc2a6; /* Matching button color */
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s;
+    align-items: center;
+}
+.check-button {
+    display: block;
+    margin: 10px auto;
+}
+
+
+.check-button:hover {
+    background-color: #438871; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+.ui{
+    text-decoration: none;
+}
+
+.donate-section {
+    background-color: #8FA89C;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url('design2.png'); /* Add correct path */
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.donate-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.donate-section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.donate-btn {
+    background-color: #c1db00;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.donate-btn:hover {
+    background-color: #ffffff;
+}
+
+.donate-section {
+    padding: 100px 20px; /* Increased padding to make it bigger */
+    text-align: center;
+    background-color: #6cc2a6; /* Adjust if needed */
+}
+
+.donate-section h2 {
+    font-size: 3rem; /* Bigger heading */
+    font-weight: bold;
+    color: white;
+}
+
+.donate-section p {
+    font-size: 1.5rem; /* Bigger paragraph */
+    color: white;
+}
+
+.donate-btn {
+    font-size: 1.8rem; /* Bigger button text */
+    padding: 15px 40px; /* Larger button */
+    background-color: #ffea65; /* Adjust button color if needed */
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.donate-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.successful-transplants {
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+    position: relative;
+    color:rgb(61, 61, 61);
+}
+h2 {
+    font-size: 32px; /* Increased heading size */
+    font-weight: bold;
+    color:black;
+}
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.card {
+    min-width: 250px;
+    background: #6cc2a6;
+    padding: 25px; /* Increased padding */
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px; /* Bigger text */
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+.prev { left: -30px; }
+.next { right: -30px; }
+
+.faq-section {
+    background-color: #e1f7f0; /* Background Color */
+    background-image: url('design.png'); /* Add Your Image Path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Blend color & image */
+    padding: 50px;
+    text-align: center;
+    color: rgb(59, 59, 59);
+}
+
+.faq-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.faq-container {
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+}
+
+.faq-item {
+    background :#c8df33;
+    color: black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-item label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.faq-item input:checked ~ .faq-content {
+    max-height: 100px;
+}
+
+.footer {
+    background-color: #6cc2a6; /* Green background */
+    background-image: url(design3.png);
+    color: rgb(255, 255, 255);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo img {
+    width: 200px; /* Adjust the size of your logo */
+    height: 200px;
+
+}
+
+.footer-links, .footer-contact, .footer-social {
+    text-align: left;
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-contact p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    background: #5aa892; /* Darker shade of green */
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 14px;
+}

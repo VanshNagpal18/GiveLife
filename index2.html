@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organ Bank Availability</title>
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+  <header>
+    <h1>Organ Bank Availability</h1>
+    <p>Helping save lives by providing organs for transplant</p>
+  </header>
+
+  <section class="organ-list">
+    <h2>Available Organs</h2>
+    <div class="organ-card">
+      <h3>Kidney</h3>
+      <p>Status: Available</p>
+      <p>Location: suraksha nursing home,faridabad</p>
+      <button onclick="contact1Us()">Request Organ</button>
+    </div>
+    <div class="organ-card">
+      <h3>Heart</h3>
+      <p>Status: Available</p>
+      <p>Location: Red cross ,delhi</p>
+      <button onclick="contact1Us()">Request Organ</button>
+    </div>
+    <div class="organ-card">
+      <h3>Liver</h3>
+      <p>Status: Available</p>
+      <p>Location:Max hospital, Noida</p>
+      <button onclick="contact1Us()">Request Organ</button>
+    </div>
+    <div class="organ-card">
+      <h3>Cornea</h3>
+      <p>Status: Available</p>
+      <p>Location:jain hospital,lucknow</p>
+      <button onclick="contact1Us()">Request Organ</button>
+    </div>
+    <div class="organ-card">
+      <h3>Lungs</h3>
+      <p>Status: Available</p>
+      <p>Location:Yatharth hospital,Greater Noida</p>
+      <button onclick="contact1Us()">Request Organ</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Organ Bank. All Rights Reserved.</p>
+    <p> Thank you for choosing Givelife</p>
+  </footer>
+<style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  background-image: url(Givelife.jpeg);
+  background-size:contain;
+  color: #333;
+}
+
+header {
+  background-color: #005f73;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+.organ-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.organ-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.organ-card h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.organ-card p {
+  font-size: 16px;
+}
+
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #005f73;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position:sticky;
+  width: 100%;
+  bottom: 30;
+}
+
+footer p {
+  margin: 0;
+}
+
+</style>
+
+<script>
+function contact1Us() {
+  alert(" Your Request has been sent to the desired hospital!");
+}
+</script>
+</style>
+<button onclick="window.history.back()" class="return-btn">Return</button>
+
+<style>
+  .return-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .return-btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</body>
+</html>

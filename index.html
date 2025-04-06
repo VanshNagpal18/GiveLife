@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiveLife</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="nav-container">
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Hospitals</a></li>
+                <li><a href="#">Want to Donate?</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>A Second Chance</h1>
+            <h1>Begins with You.</h1>
+            <div class="buttons">
+                <button class="btn secondary">Got any questions?</button>
+                <button class="btn primary" onclick="contactUs()">Contact us</button>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-box"> 
+                    <img class= "carousel-item img" src="transplant.webp" alt="t1" >
+                   
+                </div>
+                <div class="carousel-box">
+                    <img class= "carousel-item img"src="kidney.jpeg" alt="t2">
+                </div>
+                <div class="carousel-box">
+                 <img class= "carousel-item img" src="t2.jpeg" alt="t3">
+                </div>
+                <div class="carousel-box">
+                    <img class= "carousel-item img" src="t4.jpg" alt="t3">
+                </div>
+                <div class="carousel-box">
+                    <img class= "carousel-item img" src="t5.jpg" alt="t3">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about-us">
+        <div class="about-container">
+            <h1>About Us</h1>
+            <p>
+                Every second counts when it comes to saving lives. Our organ donor-recipient matching system 
+                ensures that those in need find the right donors efficiently and seamlessly. 
+            </p>
+            <p>
+                By bridging the gap between donors and recipients, we aim to give hope, extend lives, 
+                and make the process smoother for everyone involved.
+            </p>
+            <p>
+                Join us in making a difference—because a single donation can create a lifetime of impact.
+            </p>
+        </div>
+    </section>
+    
+    <section class="connected-hospitals">
+        <div class="content">
+            <h2>Connected Hospitals & Organ Availability</h2>
+            <p>
+                Our platform connects you with hospitals that specialize in organ donation 
+                and transplantation, making the process seamless and efficient. We provide real-time updates on:
+            </p>
+            <ul>
+                <li><span class="highlight">Organ Banks & Availability</span> – Find hospitals with specific organs in stock and check real-time availability.</li>
+                <button class="check-button"onclick="checkAvailability()"><a class = "ui" href="index2.html" >Check</a></button>
+                <li><span class="highlight">Transplant Centers</span> – Locate hospitals that actively perform organ transplants, along with details on the procedures they offer.</li>
+                <button class="check-button" onclick="locateHospitals()">Check</button>
+            </ul>
+            <p>
+                By providing this essential information, we aim to bridge the gap between donors, recipients, and medical institutions, ensuring that every available organ reaches the right person at the right time.
+            </p>
+        </div>
+    </section>
+    
+   
+    
+    <section class="donate-section">
+        <div class="container">
+            <h2>Want to Donate?</h2>
+            <p>Be the reason someone gets a second chance—donate life today.</p>
+            <button class ="donate-btn"><a class="ui" href= index1.html>Register Now</a></button>
+        </div>
+    </section>
+    
+    <div class="successful-transplants">
+        <h2>Successful Transplants</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="card">
+                    <p><strong>Johny Mathews</strong></p>
+                    <p>Received a Kidney transplant and now leads a healthy life.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Mohit Gupta</strong></p>
+                    <p>A heart transplant gave her a second chance at life.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Rajiv Sharma</strong></p>
+                    <p>Liver transplant successfully saved his life.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Piyush Verma</strong></p>
+                    <p>A lung transplant restored her ability to breathe freely.</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label for="faq1">Who can donate organs?</label>
+                <div class="faq-content">
+                    <p>Almost anyone can become an organ donor. Eligibility depends on medical history and organ condition.</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label for="faq2">How do I register as an organ donor?</label>
+                <div class="faq-content">
+                    <p>You can register through official portals, hospitals, or organ donation organizations in your country.</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label for="faq3">Does my family need to give consent after my death?</label>
+                <div class="faq-content">
+                    <p>Yes, in many countries, even if you're a registered donor, your family may need to give consent.</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <input type="checkbox" id="faq4">
+                <label for="faq4">Will organ donation affect funeral arrangements?</label>
+                <div class="faq-content">
+                    <p>No, organ donation does not interfere with funeral arrangements.</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <input type="checkbox" id="faq5">
+                <label for="faq5">Are there any costs involved in organ donation?</label>
+                <div class="faq-content">
+                    <p>No, organ donation is free. All costs are covered by the transplant organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+    
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Hospitals</a></li>
+                    <li><a href="#">Want to Donate?</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: givelife@gmail.com</p>
+                <p> Technical Assistant</p>
+                <p>Name: Vansh Nagpal</p>
+                <p>Phone: 8587982191</p>
+                
+            </div>
+    
+            
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

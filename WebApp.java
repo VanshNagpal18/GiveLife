@@ -3,14 +3,25 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.scene.web.WebEngine;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 
 public class WebApp extends Application {
     @Override
     public void start(Stage stage) {
         WebView webView = new WebView();
+	WebEngine engine = webView.getEngine();
 	webView.getEngine().setJavaScriptEnabled(true);
 
-//        webView.getEngine().load("~/Give_Life_Project/Give-Life-Project/index.html");
+	engine.setOnAlert(event -> {
+		Alert alert = new Alert(AlertType.INFORMATION);
+            		alert.setTitle("JavaScript Alert");
+            		alert.setHeaderText(null);
+            		alert.setContentText(event.getData());
+            		alert.showAndWait();
+        	});
 	
 	String filePath = "index.html";
         File file = new File(filePath);
@@ -22,10 +33,10 @@ public class WebApp extends Application {
         }
 
 	
-	webView.getEngine().setOnError(event -> 
+	engine.setOnError(event -> 
 	    System.out.println("WebView Error: " + event.getMessage()));
 
-	webView.getEngine().locationProperty().addListener((obs, oldLoc, newLoc) -> 
+	engine.locationProperty().addListener((obs, oldLoc, newLoc) -> 
 	    System.out.println("Loading: " + newLoc));
 
 

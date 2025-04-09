@@ -20,11 +20,11 @@
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <input type="tel" id="phone" name="phoneNumber" placeholder="Enter your phone number" required>
 
             <label>Would you like to donate?</label>
             <label for="donateYes">
-                <input type="radio" id="donateYes" name="donate" value="yes" required>
+                <input type="radio" id="donateYes" name="likeToDonate" value="yes" required>
                 Yes
             </label>
             <label for="donateNo">
@@ -33,19 +33,19 @@
             </label>
 
             <label for="organ">Which organs would you like to donate?</label>
-            <select id="organ" name="organ" required>
+            <select id="organ" name="organName" required>
                 <option value="">Select organ(s)</option>
-                <option value="heart">Heart</option>
-                <option value="kidneys">Kidneys</option>
-                <option value="liver">Liver</option>
-                <option value="lungs">Lungs</option>
+                <option value="Heart">Heart</option>
+                <option value="Kidney">Kidneys</option>
+                <option value="Liver">Liver</option>
+                <option value="Lungs">Lungs</option>
                 <option value="pancreas">Pancreas</option>
-                <option value="intestines">Intestines</option>
-                <option value="all">All of the above</option>
+                <option value="Intestine">Intestines</option>
+                <option value="All of the above">All of the above</option>
             </select>
 
             <label for="message">Additional Comments (Optional)</label>
-            <textarea id="message" name="message" rows="4" placeholder="Enter any comments or additional details"></textarea>
+            <textarea id="message" name="additionalComments" rows="4" placeholder="Enter any comments or additional details"></textarea>
 
             <button type="submit">Submit Registration</button>
         </form>
@@ -138,5 +138,6 @@ textarea {
           background-color: #0056b3;
         }
       </style>
+      <script src="index1.js" ></script>
 </body>
 </html>

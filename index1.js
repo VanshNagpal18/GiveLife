@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
   
     form.addEventListener("submit", async function (e) {
-      e.preventDefault(); // prevent default form submission
+      e.preventDefault(); 
   
       const formData = {
         fullName: document.getElementById("fullName").value,

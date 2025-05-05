@@ -569,7 +569,8 @@ h2 {
 }
 
 .footer-logo img {
-    width: 120px; /* Adjust the size of your logo */
+    width: 170px; /* Adjust the size of your logo */
+    height: 170px;
 }
 
 .footer-links, .footer-contact, .footer-social {

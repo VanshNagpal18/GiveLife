@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organ Transplant Centers - Knowledge Park</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Organ Transplant Centers Near You</h1>
+    <input type="text" id="search" placeholder="Search hospitals..." />
+    <div id = map>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d129911.36379643084!2d77.43331726305985!3d28.485355320258993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sorgan%20transplant%20centres%20in%20greaternoida!5e0!3m2!1sen!2sin!4v1746428799807!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="hospital-list" class="card-container">
+      <!-- Hospital Cards -->
+    </div>
+  </div>
+  
+  <style>
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7f9;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #search {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .map{
+    width :100%;
+    height : 400px;
+  }
+  
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h2 {
+    color: #0077cc;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .contact {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  </style>
+
+  <script>
+   const hospitals = [
+    {
+      name: "Yatharth Super Speciality Hospital",
+      location: "Knowledge Park III, Greater Noida",
+      specialties: "Kidney & Liver Transplant",
+      contact: "+91-8800447777"
+    },
+    {
+      name: "Sharda Hospital",
+      location: "Knowledge Park III, Greater Noida",
+      specialties: "General Surgery, Urology",
+      contact: "+91-120-4570000"
+    },
+    {
+      name: "Jaypee Hospital",
+      location: "Sector 128, Noida",
+      specialties: "Kidney & Liver Transplant",
+      contact: "+91-120-4603000"
+    },
+    {
+      name: "Fortis Hospital",
+      location: "Sector 62, Noida",
+      specialties: "Advanced Kidney & Liver Transplant",
+      contact: "+91-120-4266000"
+    },
+    {
+        name: "All India Institute of Medical Sciences (AIIMS)",
+        location: "Ansari Nagar, New Delhi",
+        specialties: "Advanced Kidney & Liver Transplant",
+        contact: "91-11-26588500"
+    },
+ {      name: "Indraprastha Apollo Hospital",
+        location: "Sarita Vihar, Delhi Mathura Road, New Delhi 110076",
+        contact: "+91- 9867453284"
+       },
+ {
+        name: " Medanta The Medicity",
+        location: "CH Baktawar Singh Road, Islampur Colony, Sector 38 Gurgaon 122018",
+        contact: "+91-1276981346"
+}
+  ];
+  
+  const listContainer = document.getElementById("hospital-list");
+  const searchInput = document.getElementById("search");
+  
+  function displayHospitals(hospitalsToShow) {
+    listContainer.innerHTML = "";
+    hospitalsToShow.forEach(h => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h2>${h.name}</h2>
+        <p><strong>Location:</strong> ${h.location}</p>
+        <p><strong>Specialties:</strong> ${h.specialties}</p>
+        <p class="contact">📞 ${h.contact}</p>
+      `;
+      listContainer.appendChild(card);
+    });
+  }
+  
+  searchInput.addEventListener("input", () => {
+    const term = searchInput.value.toLowerCase();
+    const filtered = hospitals.filter(h => 
+      h.name.toLowerCase().includes(term) || 
+      h.location.toLowerCase().includes(term) || 
+      h.specialties.toLowerCase().includes(term)
+    );
+    displayHospitals(filtered);
+  });
+  
+  // Initial render
+  displayHospitals(hospitals);
+   
+  </script>
+</body>
+</html>

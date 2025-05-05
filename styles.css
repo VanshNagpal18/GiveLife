@@ -293,7 +293,7 @@ h6 {
 
 
 #about-us {
-    background: url('photo.png') no-repeat center center/cover, #6cc2a6;
+    background: url('design.png') no-repeat center center/cover, #6cc2a6;
     padding: 100px 10%;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -391,7 +391,7 @@ p {
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 60px 20px;
-    background-image: url('photo2.png'); /* Add correct path */
+    background-image: url('design2.png'); /* Add correct path */
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -555,6 +555,7 @@ h2 {
 
 .footer {
     background-color: #6cc2a6; /* Green background */
+    background-image: url(design3.png);
     color: white;
     padding: 50px 0;
     text-align: center;

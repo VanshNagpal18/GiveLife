@@ -382,7 +382,9 @@ p {
     transform: scale(1.05);
 }
 
-
+.ui{
+    text-decoration: none;
+}
 
 .donate-section {
     background-color: #8FA89C;

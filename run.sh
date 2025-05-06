@@ -30,6 +30,10 @@ fi
 
 export PATH_TO_FX_LIBS="$SCRIPT_DIR/javafx/javafx-sdk-21.0.6/lib/"
 
+echo "Building WebApp.java..."
 javac --module-path $PATH_TO_FX_LIBS --add-modules javafx.controls,javafx.fxml,javafx.web WebApp.java
-java --module-path $PATH_TO_FX_LIBS --add-modules javafx.controls,javafx.fxml,javafx.web WebApp
+echo "WebApp built without any issue"
 
+echo "Launching WebApp..."
+java --module-path $PATH_TO_FX_LIBS --add-modules javafx.controls,javafx.fxml,javafx.web WebApp
+echo "WebApp terminated successfully."

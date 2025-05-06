@@ -1,0 +1,152 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organ Donation Matcher</title>
+  <link rel="stylesheet" href="matching.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Organ Donation Matcher</h1>
+    <form id="matchForm">
+      <div class="form-section">
+        <h2>Donor Information</h2>
+        <input type="number" id="donorAge" placeholder="Donor Age" required>
+        <input type="text" id="donorDisease" placeholder="Donor Disease">
+      </div>
+      <div class="form-section">
+        <h2>Receiver Information</h2>
+        <input type="number" id="receiverAge" placeholder="Receiver Age" required>
+        <input type="text" id="receiverDisease" placeholder="Receiver Disease">
+      </div>
+      <input type="text" id="organType" placeholder="Organ Type (e.g., Kidney)" required>
+      <input type="text" id="bloodGroup" placeholder="Blood Group (e.g., A+)" required>
+      <input type="number" id="urgency" placeholder="Urgency Score (0-10)" required>
+      <input type="number" id="waitlist" placeholder="Waitlist Days" required>
+      <input type="number" id="distance" placeholder="Distance (in km)" required>
+      <button type="submit">Check Match</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById("matchForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        organ_type: document.getElementById("organType").value,
+        blood_group: document.getElementById("bloodGroup").value,
+        donor_age: parseInt(document.getElementById("donorAge").value),
+        recipient_age: parseInt(document.getElementById("receiverAge").value),
+        location_distance_km: parseFloat(document.getElementById("distance").value),
+        urgency_score: parseFloat(document.getElementById("urgency").value),
+        waitlist_days: parseInt(document.getElementById("waitlist").value)
+      };
+
+      fetch("https://9c76-34-34-123-89.ngrok-free.app/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(res => {
+          document.getElementById("result").innerText =
+            "Predicted Match Probability: " + (res.match_probability * 100).toFixed(2) + "%";
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Something went wrong. Please try again.");
+        });
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organ Donation Matcher</title>
+  <link rel="stylesheet" href="matching.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Organ Donation Matcher</h1>
+    <form id="matchForm">
+      <div class="form-section">
+        <h2>Donor Information</h2>
+        <input type="number" id="donorAge" placeholder="Donor Age" required />
+        <input type="text" id="donorDisease" placeholder="Donor Disease" />
+      </div>
+      <div class="form-section">
+        <h2>Receiver Information</h2>
+        <input type="number" id="receiverAge" placeholder="Receiver Age" required />
+        <input type="text" id="receiverDisease" placeholder="Receiver Disease" />
+      </div>
+      <input type="text" id="organType" placeholder="Organ Type (e.g., Kidney)" required />
+      <input type="text" id="bloodGroup" placeholder="Blood Group (e.g., A+)" required />
+      <input type="number" id="urgency" placeholder="Urgency Score (0-10)" required />
+      <input type="number" id="waitlist" placeholder="Waitlist Days" required />
+      <input type="number" id="distance" placeholder="Distance (in km)" required />
+      <button type="submit">Check Match</button>
+    </form>
+    
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <script>
+    document.getElementById("matchForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = {
+        organ_type: document.getElementById("organType").value,
+        blood_group: document.getElementById("bloodGroup").value,
+        donor_age: parseInt(document.getElementById("donorAge").value),
+        recipient_age: parseInt(document.getElementById("receiverAge").value),
+        location_distance_km: parseFloat(document.getElementById("distance").value),
+        urgency_score: parseFloat(document.getElementById("urgency").value),
+        waitlist_days: parseInt(document.getElementById("waitlist").value)
+      };
+
+      fetch("https://9c76-34-34-123-89.ngrok-free.app/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(res => {
+        const prob = (res.match_probability * 100).toFixed(2);
+        let riskLevel = "Low";
+        let recommendation = "Consider Other Matches";
+
+        if (prob > 75) {
+          riskLevel = "Very Low";
+          recommendation = "Strong Match - Proceed";
+        } else if (prob > 50) {
+          riskLevel = "Moderate";
+          recommendation = "Match Possible - Review Further";
+        }
+
+        document.getElementById("result").innerHTML = `
+          <h3>Match Analysis</h3>
+          <p><strong>Match Probability:</strong> ${prob}%</p>
+          <p><strong>Risk Level:</strong> ${riskLevel}</p>
+          <p><strong>Recommendation:</strong> ${recommendation}</p>
+          <p><strong>Summary:</strong> Based on organ type, age difference, urgency, and distance.</p>
+        `;
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Something went wrong. Please try again.");
+      });
+    });
+  </script>
+</body>
+</html>
